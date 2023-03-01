@@ -168,6 +168,13 @@
                 </item>
             </argument>
         </column>
+          <column name="about" class="Project\Cv\Ui\Component\Listing\Columns\AboutStr">
+            <settings>
+                <filter>false</filter>
+                <sortable>false</sortable>
+                <label translate="true">About</label>
+            </settings>
+        </column>
         <column name="updated_at" component="Magento_Ui/js/grid/columns/date">
             <settings>
                 <filter>dateRange</filter>
