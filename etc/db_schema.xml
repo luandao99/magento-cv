@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="Cv_user" resource="default" engine="innodb" comment="Table comment">
+        <column xsi:type="int" name="user_id" padding="11" unsigned="false" nullable="false" identity="true" comment=""/>
+        <column xsi:type="varchar" name="username" nullable="false" length="255" comment="Username"/>
+        <column xsi:type="varchar" name="password" nullable="false" length="255" comment="Password"/>
+        <column xsi:type="varchar" name="firstname" nullable="false" length="255" comment="First Name"/>
+        <column xsi:type="varchar" name="lastname" nullable="false" length="255" comment="Last Name"/>
+        <column xsi:type="varchar" name="phone" nullable="false" length="255" comment="Phone"/>
+        <column xsi:type="text" name="address" nullable="false" comment="Address"/>
+        <column xsi:type="text" name="avatar" nullable="true" comment="Avatar"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="true" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="user_id"/>
+        </constraint>
+    </table>
+</schema>
