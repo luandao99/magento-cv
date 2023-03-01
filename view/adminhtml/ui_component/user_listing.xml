@@ -189,5 +189,15 @@
                 <label translate="true">Created</label>
             </settings>
         </column>
+        <actionsColumn name="actions" class="Project\Cv\Ui\Component\Listing\Columns\Action">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">107</item>
+                    <item name="indexField" xsi:type="string">id</item>
+                    <!-- <item name="name" xsi:type="string" translate="true">Actions</item> -->
+                </item>
+            </argument>
+        </actionsColumn>
     </columns>
 </listing>
