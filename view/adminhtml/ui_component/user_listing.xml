@@ -47,13 +47,54 @@
             </argument>
         </argument>
     </dataSource>
+     <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="data" xsi:type="array">
+                <item name="selectProvider" xsi:type="string">user_listing.user_listing_data_source.news_spinner_columns.ids</item>
+                <item name="displayArea" xsi:type="string">bottom</item>
+                <item name="indexField" xsi:type="string">user_id</item>
+                </item>
+            </argument>
+            <action name="delete">
+                <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="type" xsi:type="string">delete</item>
+                    <item name="label" xsi:type="string" translate="true">Delete</item>
+                    <item name="url" xsi:type="url" path="cvuser/user/massDelete"/>
+                    <item name="confirm" xsi:type="array">
+                        <item name="title" xsi:type="string" translate="true">Delete Blogs?</item>
+                        <item name="message" xsi:type="string" translate="true">Are you sure you want to delete the selected blogs?</item>
+                    </item>
+                </item>
+                </argument>
+            </action>
+        </massaction>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="templates" xsi:type="array">
+                            <item name="filters" xsi:type="array">
+                                <item name="select" xsi:type="array">
+                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
+                                    <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+        </filters>
+        <paging name="listing_paging"/>
+    </listingToolbar>
     <columns name="news_spinner_columns">
         <!-- this is column section name, used above in spinner -->
         <selectionsColumn name="ids">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <!-- same as Data source config indexField -->
-                    <item name="indexField" xsi:type="string">id</item>
+                    <item name="indexField" xsi:type="string">user_id</item>
                 </item>
             </argument>
         </selectionsColumn>
@@ -95,6 +136,20 @@
                     <item name="label" xsi:type="string" translate="true">Address</item>
                 </item>
             </argument>
+        </column>
+        <column name="updated_at" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <label translate="true">Updated</label>
+            </settings>
+        </column>
+        <column name="created_at" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <label translate="true">Created</label>
+            </settings>
         </column>
     </columns>
 </listing>
