@@ -69,6 +69,28 @@
                 </item>
                 </argument>
             </action>
+            <action name="status">
+                <settings>
+                    <type>status</type>
+                    <label translate="true">Change status</label>
+                    <actions>
+                        <action name="0">
+                            <type>enable</type>
+                            <label translate="true">Enable</label>
+                            <url path="cvuser/user/massStatus">
+                                <param name="status">1</param>
+                            </url>
+                        </action>
+                        <action name="1">
+                            <type>disable</type>
+                            <label translate="true">Disable</label>
+                            <url path="cvuser/user/massStatus">
+                                <param name="status">0</param>
+                            </url>
+                        </action>
+                    </actions>
+                </settings>
+            </action>
         </massaction>
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
@@ -127,6 +149,15 @@
                     <item name="label" xsi:type="string" translate="true">Phone</item>
                 </item>
             </argument>
+        </column>
+         <column name="status" component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <options class="Project\Cv\Ui\Component\Listing\Columns\Status"/>
+                <dataType>select</dataType>
+                <filter>select</filter>
+                <sortable>false</sortable>
+                <label translate="true">Status</label>
+            </settings>
         </column>
         <column name="address">
             <argument name="data" xsi:type="array">
